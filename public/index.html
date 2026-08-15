@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DNA Rush</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="menuScreen" class="screen active">
+        <div class="panel start-panel">
+          <div class="brand-wrap">
+            <span class="eyebrow">EDUCATIONAL MATCH GAME</span>
+            <h1>DNA RUSH</h1>
+          </div>
+
+          <div class="mission-box">
+            <p class="mission-title">Match the complementary DNA bases!</p>
+            <div class="pair-display">
+              <span>A ↔ T</span>
+              <span>C ↔ G</span>
+            </div>
+          </div>
+
+          <button id="startButton" class="primary-btn">START GAME</button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="screen">
+        <header class="topbar">
+          <div class="title-block">
+            <span class="eyebrow">DNA MATCH</span>
+            <h2>DNA RUSH</h2>
+          </div>
+
+          <div class="hud">
+            <div class="stat-box">
+              <span class="label">Score</span>
+              <strong id="scoreValue">0</strong>
+            </div>
+            <div class="stat-box timer-box">
+              <span class="label">Time</span>
+              <strong id="timeValue">05:00</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Combo</span>
+              <strong id="comboValue">0</strong>
+            </div>
+          </div>
+        </header>
+
+        <main class="game-area">
+          <div id="conveyorBoard" class="conveyor-board" aria-label="DNA conveyor belt">
+            <div class="belt-glow"></div>
+          </div>
+
+          <div class="legend-bar">
+            <span>A ↔ T</span>
+            <span>C ↔ G</span>
+          </div>
+
+          <div class="pair-dock" aria-label="DNA base selector">
+            <div class="pair-dock-label">Select the matching DNA base</div>
+            <div class="pair-dock-buttons">
+              <button type="button" class="pair-button" data-base="A">A</button>
+              <button type="button" class="pair-button" data-base="T">T</button>
+              <button type="button" class="pair-button" data-base="C">C</button>
+              <button type="button" class="pair-button" data-base="G">G</button>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div id="gameOverScreen" class="screen">
+        <div class="panel game-over-panel">
+          <span class="eyebrow">SESSION COMPLETE</span>
+          <h2>TIME'S UP!</h2>
+
+          <div class="results-grid">
+            <div class="result-item">
+              <span>Final Score</span>
+              <strong id="finalScore">0</strong>
+            </div>
+            <div class="result-item">
+              <span>Best Combo</span>
+              <strong id="bestComboValue">0</strong>
+            </div>
+            <div class="result-item">
+              <span>Correct Matches</span>
+              <strong id="correctMatchesValue">0</strong>
+            </div>
+            <div class="result-item">
+              <span>Wrong Matches</span>
+              <strong id="wrongMatchesValue">0</strong>
+            </div>
+            <div class="result-item">
+              <span>Accuracy</span>
+              <strong id="accuracyValue">0%</strong>
+            </div>
+          </div>
+
+          <div class="gameover-actions">
+            <button id="playAgainButton" class="primary-btn">PLAY AGAIN</button>
+            <button id="backMenuButton" class="secondary-btn">BACK TO MENU</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
