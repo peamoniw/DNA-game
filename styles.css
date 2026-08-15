@@ -300,22 +300,6 @@ h2 {
   transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
 }
 
-.pair-button[data-base="A"] {
-  color: #0d5bc9;
-}
-
-.pair-button[data-base="T"] {
-  color: #c9552e;
-}
-
-.pair-button[data-base="C"] {
-  color: #1b7f48;
-}
-
-.pair-button[data-base="G"] {
-  color: #6039bd;
-}
-
 .pair-button:hover {
   transform: translateY(-2px);
   border-color: rgba(45, 126, 247, 0.22);
@@ -364,27 +348,6 @@ h2 {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-}
-
-.dna-card[data-base="A"] .base-letter {
-  color: #0d5bc9;
-}
-
-.dna-card[data-base="T"] .base-letter {
-  color: #c9552e;
-}
-
-.dna-card[data-base="C"] .base-letter {
-  color: #1b7f48;
-}
-
-.dna-card[data-base="G"] .base-letter {
-  color: #6039bd;
-}
-
-.dna-card.selected {
-  box-shadow: 0 0 0 4px rgba(45,126,247,0.22), 0 18px 30px rgba(45,126,247,0.18);
-  transform: translateY(-4px) scale(1.03);
 }
 
 .dna-card .base-label {
@@ -446,6 +409,22 @@ h2 {
   0% { opacity: 0; transform: translate(-50%, -50%) scale(0.7); }
   20% { opacity: 1; }
   100% { opacity: 0; transform: translate(-50%, -110%) scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .results-grid {
