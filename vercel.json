@@ -1,4 +1,5 @@
 {
-  "buildCommand": "mkdir -p .vercel/output/static && cp public/* .vercel/output/static/",
-  "outputDirectory": ".vercel/output/static"
+  "version": 2,
+  "buildCommand": "mkdir -p public && cp index.html styles.css script.js public/",
+  "outputDirectory": "public"
 }
