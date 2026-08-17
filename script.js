@@ -486,18 +486,30 @@ function updateEvents(deltaSeconds) {
   }
 }
 
+function getBoardMetrics() {
+  const boardRect = conveyorBoard.getBoundingClientRect();
+  const cardWidth = Math.max(72, Math.min(110, boardRect.width * 0.22));
+  const cardHeight = cardWidth * 1.34;
+  const laneTop = Math.min(52, Math.max(18, boardRect.height * 0.08));
+  const laneBottom = Math.max(90, boardRect.height - Math.max(100, cardHeight + 26));
+
+  return {
+    boardRect,
+    cardWidth,
+    cardHeight,
+    laneTop,
+    laneBottom,
+  };
+}
+
 function spawnCard() {
   const base = randomBase();
-  const boardRect = conveyorBoard.getBoundingClientRect();
-  const cardWidth = 110;
-  const cardHeight = 148;
-  const laneTop = 52;
-  const laneBottom = Math.max(90, boardRect.height - 120);
+  const { boardRect, cardWidth, laneTop, laneBottom } = getBoardMetrics();
   const y = laneTop + Math.random() * (laneBottom - laneTop);
   const card = {
     id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
     base,
-    x: -cardWidth - 20,
+    x: -(cardWidth + 20),
     y,
     speed: 60 + Math.random() * 30,
     element: null,
